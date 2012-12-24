@@ -1,0 +1,13 @@
+*.aux
+*.log
+*.lof
+*.toc
+memoria.pdf
+previ.pdf
+*.synctex.gz
+*.bbl
+*.blg
+*.out
+*.run.xml
+previ-blx.bib
+memoria-blx.bib

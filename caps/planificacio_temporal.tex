@@ -1,0 +1,77 @@
+\chapter{Planificació temporal}
+
+\section{Anàlisi del problema}
+
+La planificació temporal d'aquest primer periòde, com es pot veure a la taula \ref{llegenda-gantt-analisi}, es centra únicament en estudiar que es el que s'ha fet fins al moment, i per on sería millor tirar per a desenvolupar aquesta aplicació.
+
+\begin{table}[h!]
+	\caption{Llegenda del diagrama de Gantt \ref{gantt-analisi}}
+	\label{llegenda-gantt-analisi}
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			{\bf Identificador}	& {\bf Descripció} \\ \hline
+			1					& Estudi de l'estat de l'art \\
+			2					& Diseny de l'aplicació \\
+			3					& Estudi de les tecnologies a utilitzar \\
+			4					& Redacció de l'informe previ \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}[h!]
+	\caption{Gantt de l'anàlisi del problema}
+	\label{gantt-analisi}
+	\begin{center}
+		\begin{ganttchart}[vgrid]{14}
+			\gantttitle{2011}{12}
+			\gantttitle{2012}{2} \\
+			\gantttitlelist{41,...,52}{1}
+			\gantttitlelist{1,...,2}{1} \\
+			\ganttbar{1}{1}{4} \\
+			\ganttlinkedbar{2}{5}{9} \\
+			\ganttlinkedbar{3}{10}{12} \\
+			\ganttlinkedbar{4}{13}{14}
+		\end{ganttchart}
+	\end{center}
+\end{figure}
+
+\clearpage
+\section{Desenvolupamnet de l'aplicatiu web}
+
+La planificació de temps d'aquest segon periòde es centra en el desenvolupament de l'aplicació. Ho he dividit en les parts més representatives d'aquesta. Si es donés el cas de falta de temps, la tercera tasca, insercció de llibres de forma automàtica, seria deixada pel final, ja que, tot i ser bastant necesària per poder probar be l'aplicació, no és vital per al desenvolupament d'aquesta.
+
+\begin{table}[h!]
+	\caption{Llegenda del diagrama de Gantt \ref{gantt-desenvolupament}}
+	\label{llegenda-gantt-analisi}
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			{\bf Identificador}	& {\bf Descripció} \\ \hline
+			1					& Login \\
+			2					& Insercció de llibres manual \\
+			3					& Insercció de llibres automàtic \\
+			4					& Buscador \\
+			5					& Estudi sobre recomanadors \\
+			6					& Implementació del recomanador \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}[h!]
+	\caption{Gantt del desenvolupament de l'aplicatiu web}
+	\label{gantt-desenvolupament}
+	\begin{center}
+		\begin{ganttchart}[vgrid]{22}
+			\gantttitle{2012}{22} \\
+			\gantttitlelist{3,...,24}{1} \\
+			
+			\ganttbar{1}{1}{2} \\
+			\ganttlinkedbar{2}{3}{4} \\
+			\ganttlinkedbar{3}{5}{7} \\
+			\ganttlinkedbar{4}{9}{11} \\
+			\ganttlinkedbar{5}{12}{15} \\
+			\ganttlinkedbar{6}{16}{22}
+		\end{ganttchart}
+	\end{center}
+\end{figure}

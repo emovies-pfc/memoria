@@ -1,0 +1,29 @@
+\chapter{Estat de l'art}
+
+L'estat de l'art d'aquest projecte es pot dividir en dos seccions. Per una banda, tenim el que seria la recomanació de llibres de forma genèrica. Per l'altra, s'ha de veure també quins avenços hi ha amb respecte al desenvolupament de sistemes recomanadors per mitjà de xarxes neuronals.
+
+\section{Recomanació de llibres}
+Existeixen moltes webs que es dediquen a la recomanació de llibres. Es sap que hi ha diferents mètriques per a determinar els tipus de llibres. En aquesta primera part analitzarem l'ús de les diferents metriques per a fer aquestes recomanacions.
+
+El primer (i més gran) grup de webs són les que recomanen llibres basant-se en l'assumpció de que, si a un grup d'usuaris li agraden dos llibres i a tu t'agrada un d'aquests dos llibres, l'altré també t'agradarà\cite{Amazon,EntreLectores,Librofilia,Shelfari,Goodreads,Librarything}.
+
+Aquesta primera explicació, tot i que simplista, deixa clara l'idea darrera d'aquestes webs, que és la suposició de que t'agradaran les coses que agraden a usuaris amb gustos similars. Aquests gustos similars, a diferencia de l'exemple, però, poden ser analitzats de múltiples formes, tot i que l'objectiu final sempre serà el mateix: Establir una similitut entre dos usuàris, i buscar llibres que hagin agradat a usuaris similars a l'usuari al que es busca fer la recomanació.
+
+Hi ha un altre conjunt de webs que, enlloc de, com les anteriors, basar-se en un conjunt molt gran de lectures, el que fan es recomanar llibres a l'usuari tenint en compte únicament l'últim llibre llegit\cite{Bookseer,Whatshouldireadnext}. Això té una gran ventatge a nivell d'experiencia d'usuari que és que s'evita el necesitar un coneixement dels gustos de l'usuari. Aquest tipus d'aprenentatge en el que es basa és en el coneixement de característiques del llibre, i aleshores busca llibres que, per a aquestes caracteristiques conegudes, siguin similars.
+
+Parlant més concretament de Book Seer\cite{Bookseer}, les característiques que fa servir són precisament les dades de dues webs comentades anteriorment, Amazon\cite{Amazon} i LibraryThing\cite{Librarything}. Fa servir les dades d'aquestes webs per a evitar a l'usuari tenir que registrar-se i crear la seva biblioteca, i en canvi recomana basant-se en un conjunt d'informació més petit, com es l'últim llibre\cite{Bookseer-usa-amazon}.
+
+Hi ha un projecte interesant, Booklamp\cite{Booklamp}, que, enlloc de basar-se en dades d'usuari o característiques com les que podrien ser tags, genere del llibre, autor, etc., el que fà és analitzar tot el contingut del llibre. D'aquest contingut n'extreu unes métriques, que seràn les que farà servir per a determinar si el llibre pot agradar o no a l'usuari. De forma teòrica, aquest sistema hauria de tenir una tasa d'encert molt alta, però la gran dificultat que té es obtenir unes bones caracteristiques donat únicament el contingut en pla del llibre.
+
+Com es pot veure, hi ha molts projectes que tracten el tema de la recomanació de llibres.
+
+\section{Recomanació mitjançant Xarxes Neuronals Artificials}
+\label{sec:estat-de-lart-ann}
+
+El camp de la recomanació mitjançant Xarxes Neuronals Artificials (d'ara en endevant ANN, que que són les sigues per a Artificial Neural Network) és un tema que ha estat tractat en multitut de tesis.
+
+Es pot apreciar que és factible el desenvolupament d'una ANN mitjançant xarxes neuronals. És pot desenvolupar aquest sistema de recomanació tant basant-se en contingut (Content Based Filtering) com basant-se en les opinions dels demés usuaris d'una aplicació (Collaborative Filtering).
+
+El principal problema de les xarxes neuronals és que tenen un temps d'aprenentatge molt llarg\cite{faster-ann-recomender}. Hi ha un estudi\cite{collaborative-filtering-som-cbr} que, el que fà, és utilitzar una ANN per tal de categoritzar els patrons dels usuaris. Aquest proces és dut com un proces \emph{off-line}, que no necesita ser executat cada cop que un usuari solicita una recomanació. Mitjançant alguns altres algoritmes d'aprenentatge, acaba donant recomanacions de forma considerablement ràpida.
+
+Com es pot veure, hi ha hagut bastanta investigació en aquest camp, el que fa que disposem de bastanta documentació per a desenvolupar el projecte.

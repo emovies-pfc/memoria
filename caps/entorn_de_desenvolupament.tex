@@ -1,0 +1,25 @@
+\chapter{Entorn de desenvolupament}
+
+L'entorn de desenvolupament del projecte és molt important, ja que d'ell dependra tant el bon funcionament del servei com la facilitat per a desenvolupar el codi. El sistema operatiu de l'entorn de densenvolupament serà un sistema Windows, i per tant totes les intruccions comentades a fer aquí seran explicades tenint en compte aquest fet. L'aplicació te dues parts molt diferenciades, la {\bf base de dades} i el {\bf llenguatge de programació}, que seràn tractades a continuació.
+
+\section{Base de Dades}
+La base de dades a utilitzar és una peça clau de l'aplicació. D'ella dependrà tota la lògica de negoci, motiu pel qual hem de buscar algun sistema que ens permeti representar i consultar les dades de la forma més còmoda possible. Per a poder escollir de forma adequada, per tant, hem de tenir en compte aquests paràmetres.
+
+Algunes opcions a priori seríen les següents:
+
+\begin{list}
+\item Base de Dades Relacional
+\item Base de Dades clau-valor
+\item Base de Dades de Grafs
+\end{list}
+
+Com que les dades que tindrem son dades molt connexes, sería molt difícil modelarlos mitjançant una base de dades de clau valor, el que fa que aquesta opció sigui la primera en ser descartada. Les dues restants permeten representar les dades que tenim de forma mes o menys senzilla, però donat a que és bastant probable que haguem de buscar camins entre les dades, la millor opció sería la {\bf Base de Dades de Grafs}.
+
+Dins d'aquest camp hi ha varies opcions. La que he triat, ja que és de les que mes tracció està obtenint i sobre la que sembla que resultarà més fàcil obtenir documentació i exemples es {\bf Neo4J}.
+Per la bibliografia: http://www.readwriteweb.com/cloud/2011/04/5-graph-databases-to-consider.php
+
+\subsection{Instalació}
+
+Per a instalar Neo4J, s'ha de tenir instalat Java versió 1.6+. Com unicament necesitem executar aplicacions i no desenvolupar-ne, el que hem d'instalar es la versió JRE. Per a aixo, sinstala mitjançant l'executable. Un cop fet aixo, s'han de crear la variable d'entorn {\tt JAVA\_HOME}, que apunti a la carpeta on s'ha instalat, i afegir la carpeta {\tt \%JAVA_HOME\%\\bin} a {\tt \%PATH\%}.
+
+Un cop instalat Java, s'ha d'instalar {\bf Neo4J}. Per a això, s'ha de descomprimir el servidor a alguna carpeta i crear la variable d'entorn {\tt NEO4J\_HOME} apuntant a la carpeta descomprimida. Per a ejexcutar-lo, l'únic que cal fer es {\tt \%NEO4J\_HOME\%\\bin\\neo4j.exe start}.
