@@ -2,6 +2,7 @@
 *.log
 *.lof
 *.toc
+*.bcf
 memoria.pdf
 previ.pdf
 *.synctex.gz
