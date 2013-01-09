@@ -1,8 +1,9 @@
-\documentclass[a4paper,12pt,catalan]{book}
+\documentclass[a4paper,12pt, catalan]{book}
 
 \usepackage[utf8]{inputenc}
-\usepackage[catalan]{babel}
-% \usepackage{biblatex}
+\usepackage{babel}
+\usepackage{biblatex}
+\bibliography{bibliografia/previ}
 \usepackage[dvips]{graphicx}
 \usepackage{setspace}
 \usepackage{times}
@@ -14,7 +15,6 @@
 %\usepackage{geometry}
 %\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=3cm,rmargin=2cm}
 \usepackage{titlesec} % Para modificar la apariencia de los titulos
-
 \newcommand{\bigrule}{\titlerule[0.5mm]}
 \titleformat{\chapter}[display] % cambiamos el formato de los capítulos
 {\bfseries\Huge} % por defecto se usarán caracteres de tamaño \Huge en negrita
@@ -48,6 +48,5 @@
 
 No hi ha més comentaris a fer.
 \cleardoublepage
-\phantomsection
-
+\printbibliography
 \end{document}
