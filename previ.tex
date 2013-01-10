@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 \bibliography{bibliografia/previ.bib}
 \usepackage[dvips]{graphicx}
 \usepackage{setspace}
@@ -11,7 +11,7 @@
 % Fa que el ToC i els cites crein un link a on estan definits.
 \usepackage{hyperref}
 \usepackage{verbatim}
-\usepackage{pgfgantt}
+%\usepackage{pgfgantt}
 %\usepackage{geometry}
 %\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=3cm,rmargin=2cm}
 \usepackage{titlesec} % Para modificar la apariencia de los titulos
@@ -37,7 +37,7 @@
 \pagestyle{plain}
 \pagenumbering{roman}
 \tableofcontents
-\newpage
+\cleardoublepage
 \pagenumbering{arabic}
 \pagestyle{headings}
 \include{caps/objectiu}
@@ -48,5 +48,7 @@
 
 No hi ha més comentaris a fer.
 \cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography
 \end{document}
