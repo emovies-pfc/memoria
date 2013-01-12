@@ -1,80 +1,21 @@
 \chapter{Planificació temporal}
 
-INCOMPLET
-\begin{comment}
-\section{Anàlisi del problema}
+En aquesta secció s'explicarà la planificació temporal que procuraré dur a terme. Es pot observar que, la data de lliurament de la memòria sigui el 14 de juny, aquesta planificació no engloba fins a aquesta data. Aquest marge de temps, d'\textbf{un mes}, es donat per a evitar possibles imprevistos. En cas de que aquests no es donin, s'anirà extenent el projecte per a cobrir aquest temps adicional.
 
-La planificació temporal d'aquest primer periòde, com es pot veure a la taula \ref{llegenda-gantt-analisi}, es centra únicament en estudiar que es el que s'ha fet fins al moment, i per on sería millor tirar per a desenvolupar aquesta aplicació.
+\section{Implementació de la plataforma web}
 
-\begin{table}[h!]
-	\caption{Llegenda del diagrama de Gantt \ref{gantt-analisi}}
-	\label{llegenda-gantt-analisi}
-	\begin{center}
-		\begin{tabular}{| c | c |}
-			\hline
-			{\bf Identificador}	& {\bf Descripció} \\ \hline
-			1					& Estudi de l'estat de l'art \\
-			2					& Diseny de l'aplicació \\
-			3					& Estudi de les tecnologies a utilitzar \\
-			4					& Redacció de l'informe previ \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+La primera implementació de l'aplicatiu web, que consitiria en un senzill CRUD\footnote{De l'anglés, es diu d'un sistema que permet \emph{crear}, \emph{llegir}, \emph{modificar} i \emph{eliminar} (Create, Read, Update, Delete).} per a pèl·licules, usuaris, i puntuacions dels usuaris per a aquestes pèl·licules. A més, s'haurà d'importar a l'aplicatiu dades d'alguna base de dades externa, en aquest projecte, l'utilitzada serà la de movielens\cite{movielens-dataset}. Per a aquesta tasca el temps a utilitzar serà d'unes \textbf{tres setmanes}.
 
-\begin{figure}[h!]
-	\caption{Gantt de l'anàlisi del problema}
-	\label{gantt-analisi}
-	\begin{center}
-		\begin{ganttchart}[vgrid]{14}
-			\gantttitle{2011}{12}
-			\gantttitle{2012}{2} \\
-			\gantttitlelist{41,...,52}{1}
-			\gantttitlelist{1,...,2}{1} \\
-			\ganttbar{1}{1}{4} \\
-			\ganttlinkedbar{2}{5}{9} \\
-			\ganttlinkedbar{3}{10}{12} \\
-			\ganttlinkedbar{4}{13}{14}
-		\end{ganttchart}
-	\end{center}
-\end{figure}
+A més de l'implementació, s'haurà d'afegir un mínim de diseny per a la web. Donat que aquest no és l'enfoc del projecte, es realitzarà un diseny bastant bàsic, per al qual es disposarà d'\textbf{una setmana}.
 
-\clearpage
-\section{Desenvolupamnet de l'aplicatiu web}
+\section{Implementació del sistema recomanador}
 
-La planificació de temps d'aquest segon periòde es centra en el desenvolupament de l'aplicació. Ho he dividit en les parts més representatives d'aquesta. Si es donés el cas de falta de temps, la tercera tasca, insercció de llibres de forma automàtica, seria deixada pel final, ja que, tot i ser bastant necesària per poder probar be l'aplicació, no és vital per al desenvolupament d'aquesta.
+L'implementació del sistema recomanador serà la part més complexa. A més, aquest recomanador sempre es possible anar millorant-lo. Es disposarà d'\textbf{un mes} per a la primera implementació usable del recomanador, que seria el primer a integrar amb la web. Després d'això, es disposarà d'unes \textbf{tres setmanes} adicionals per a millorar aquest recomanador.
 
-\begin{table}[h!]
-	\caption{Llegenda del diagrama de Gantt \ref{gantt-desenvolupament}}
-	\label{llegenda-gantt-analisi}
-	\begin{center}
-		\begin{tabular}{| c | c |}
-			\hline
-			{\bf Identificador}	& {\bf Descripció} \\ \hline
-			1					& Login \\
-			2					& Insercció de llibres manual \\
-			3					& Insercció de llibres automàtic \\
-			4					& Buscador \\
-			5					& Estudi sobre recomanadors \\
-			6					& Implementació del recomanador \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+\section{Integració de la plataforma web amb el sistema recomanador}
 
-\begin{figure}[h!]
-	\caption{Gantt del desenvolupament de l'aplicatiu web}
-	\label{gantt-desenvolupament}
-	\begin{center}
-		\begin{ganttchart}[vgrid]{22}
-			\gantttitle{2012}{22} \\
-			\gantttitlelist{3,...,24}{1} \\
-			
-			\ganttbar{1}{1}{2} \\
-			\ganttlinkedbar{2}{3}{4} \\
-			\ganttlinkedbar{3}{5}{7} \\
-			\ganttlinkedbar{4}{9}{11} \\
-			\ganttlinkedbar{5}{12}{15} \\
-			\ganttlinkedbar{6}{16}{22}
-		\end{ganttchart}
-	\end{center}
-\end{figure}
-\end{comment}
+L'integració entre la plataforma web i el recomanador no hauria de ser excesivament complexa, ja que unicament caldrà integrar dos mètodes, el d'entrenament de la xarxa neural, i el d'obtenir recomanacions per a un usuari/per a un conjunt de pèl·licules. A aquesta tasca s'hi assignaràn \textbf{dues setmanes}.
+
+\section{Redacció de la memòria}
+
+Per a la redacció de la memoria, suposant que durant el transcurs dels anteriors processos, ja s'hi anirà treballant, s'hi assignarà, entre redacció i correccions, un temps de \textbf{tres setmanes}.
