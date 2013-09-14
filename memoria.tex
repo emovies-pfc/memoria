@@ -2,9 +2,15 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[catalan]{babel}
-\usepackage[dvips]{graphicx}
+\usepackage[backend=biber]{biblatex}
+\bibliography{bibliografia/memoria.bib}
+\usepackage{graphicx}
+\usepackage{epstopdf}
 \usepackage{setspace}
 \usepackage{times}
+\usepackage{hyperref}
+\usepackage{algorithm}
+ \usepackage{algpseudocode}
 
 %\usepackage{geometry}
 %\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=3cm,rmargin=2cm}
@@ -24,20 +30,20 @@
 
 \vspace{0.39cm}
 \begin{center}
-\includegraphics[width=4cm]{figs/uab.eps}\\
-\includegraphics[width=8cm]{figs/etse.eps}
+\includegraphics[width=4cm]{figs/uab}\\
+\includegraphics[width=8cm]{figs/etse}
 \end{center}
 \vspace{0.39cm}
 
 \vfill{}
 
-{\par\centering \textsc{\Large Títol del Projecte}\par}
+{\par\centering \textsc{\Large Plataforma eMovie: Xarxa social de pel·lícules}\par}
 \vfill{}
 
 \begin{center}
 
 \begin{minipage}[t]{0.65\columnwidth}
-Previ de la memòria del projecte de final de carrera corresponent als estudis 
+Memòria del projecte de final de carrera corresponent als estudis 
 d'Enginyeria Superior en Informàtica presentat per Roger Llopart Pla
 i dirigit per Jordi Gonzàlez i Sabaté.
 
@@ -48,60 +54,53 @@ i dirigit per Jordi Gonzàlez i Sabaté.
 \end{center}
 
 \vfill{}
-{\par\centering Bellaterra, XXXXX de 200X \par}
+{\par\centering Bellaterra, XXXXX de 2013 \par}
 
 
 \newpage \vspace*{6 true cm} \begin{center} \begin{minipage}{4in}
-\parindent=0pt El firmant, XXXXXXX , professor del Departament d'Enginyeria de la Informaci� i de les Comunicacions de la Universitat Aut�noma de Barcelona \\
+\parindent=0pt El firmant, Jordi Gonzàlez i Sabaté, professor del Departament d'Enginyeria de la Informació i de les Comunicacions de la Universitat Autònoma de Barcelona \\
 
 CERTIFICA:\\
 
-Que la present mem�ria ha sigut realitzada sota la seva direcci� per
-XXXXX \par \vspace*{.5in} Bellaterra, XXXXX de 200X
+Que la present memòria ha sigut realitzada sota la seva direcció per
+Roger Llopart Pla \par \vspace*{.5in} Bellaterra, XXXXX de 2013
 \vspace*{.5in}
-\begin{center} \vrule width 3in height 0.4pt\\Firmat: XXXXXXX
+\begin{center} \vrule width 3in height 0.4pt\\Firmat: Jordi Gonzàlez i Sabaté
 \end{center} \end{minipage} \end{center}
 
 \newpage 
 \vspace*{1 cm} \vspace*{2in} 
 \begin{flushright} 
 \begin{minipage}{4in} 
-\begin{flushright} {\em Dedicat�ria.} 
+\begin{flushright} {\em Dedicatòria.} 
 \end{flushright} 
 \end{minipage} 
 \end{flushright} \rm
 
 
-\chapter*{Agra�ments}
+\chapter*{Agraïments}
 
-Agra�ments ...
+Agraïments ...
 
 \tableofcontents
-
-\listoffigures
 
 \newpage
 \pagenumbering{arabic}
 \pagestyle{headings}
 
-% Cap�tols.
+% Capítols.
 
+% \include{caps/objectiu}
 \include{caps/introduccio}
-%\include{caps/entorn_de_desenvolupament}
-%\include{caps/cap3}
-%\include{caps/cap4}
-%\include{caps/cap5}
-%\include{caps/conclusions}
+\include{caps/estat_del_art}
+\include{caps/implementacio-web}
+\include{caps/recomanador_implementat}
+\include{caps/conclusions}
 
-
-\begin{thebibliography}{CMMS00}
+\cleardoublepage
+\phantomsection
 \addcontentsline{toc}{chapter}{Bibliografia}
-
-
-\bibitem[uml05]{uml05} UML Unified Modeling Language, juny 2005.\\<http://www.uml.org/>
-
-\end{thebibliography}
-
+\printbibliography
 
 \newpage 
 
@@ -112,8 +111,8 @@ Agra�ments ...
 \parindent=0pt \vspace*{1in} 
 \begin{center} 
 \vrule width 3in height 0.4pt
-\\Firmat:\ XXXXXXXXX
-\\ Bellaterra, XXXXXX de 200X
+\\Firmat:\ Roger Llopart Pla
+\\ Bellaterra, XXXXXX de 2013
 \end{center} 
 \end{minipage} 
 \end{center} 
@@ -125,19 +124,25 @@ Agra�ments ...
 \vfill{}
 {\par\centering \textbf{\large Resum}\large \par}
 
-Resum
+En aquest treball s'han estudiat diferents sistemes de recomanació, i s'han utilitzat per a veure com podrien arribar a recomanar pel·lícules als usuaris.
+
+Això s'ha realitzat dins del context de la recomanació web, un sistema mitjançant el qual es poden obtenir moltes dades dels usuaris, però que per altra banda requereix de temps de resposta ràpids.
 
 \vfill{}
 
 {\par\centering \textbf{\large Resumen}\large \par}
 
-Resumen
+En este trabajo se han estudiado varios sistemas de recomendación, i se han utilizado para ver como recomendar películas a los usuaris.
+
+Esto se ha llevado a cabo dentro del contexto de la recomendación web, un sistema mediante el cual se pueden obtener muchos datos de los usuarios, pero que por otro lado requiere de tiempos de respuesta rápidos.
 
 \vfill{}
 
 {\par\centering \textbf{\large Abstract}\large \par}
 
-Abstract
+In this study we have evaluated multiple recommender systems, and they've been used to recommend films to users.
+
+This has been done in the context of recomendation on the website. This context allows you to obtain a lot of data about the user, but requires quick response times.
 
 \vfill{}
 

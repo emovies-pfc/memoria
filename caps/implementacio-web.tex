@@ -1,0 +1,48 @@
+\chapter{Implementació de la Web}
+
+S'ha desenvolupat una web molt senzilla per a tal d'utilitzar aquest recomanador. El recomanador, apart de precís, s'ha de veure si és prou ràpid per a poder donar resultats a una velocitat acceptable per al món web.
+
+La web s'ha desenvolupat mitjançant PHP\footnote{PHP: Hypertext Preprocessor} (CITA). El motiu per a triar aquest llenguatge ha estat, simplement, que es el llenguatge amb el que més he treballat.
+
+\section{Frontal Web}
+
+El frontal web té les següents parts:
+
+\begin{itemize}
+	\item Pàgina principal/cercador.
+	\item Resultats de busqueda, que és un llistat paginat de resultats.
+	\item Detalls d'una pel·licula, amb la posibilitat de donarli una puntuació.
+	\item Login/Registre d'usuari.
+\end{itemize}
+
+Adicionalment, un cop t'has registrar i conectat amb el teu compte, tens l'opció d'entrar al recomanador. Aquest mostra un llistat, molt semblant al de resultats de cerca, amb recomanacions per a l'usuari, on les primeres son les que segurament més li interesin.
+
+\section{Zona d'administració}
+
+S'ha realitzat un panell d'administració molt senzill per tal de poder:
+
+\begin{itemize}
+	\item Administrar usuaris.
+	\item Administrar pel·lícules.
+	\item Importar pel·lícules desde \emph{Rotten Tomatoes}.
+\end{itemize}
+
+\section{Integració amb el recomanador}
+
+Donat que la pàgina està feta amb PHP i el recomanador en canvi en Java, s'ha hagut de buscar un sistema per a comunicar aquests dos components. El que s'ha acabat utilitzant ha estat Gearman (CITA). Gearman és un sistema molt senzill, composat per 3 parts.
+
+\subsection{Servidor}
+
+El servidor de gearman és un procés que simplement s'encarrega de rebre les conexions tant dels \emph{treballadors} com dels \emph{clients}, i dirigir la comunicació entre aquests altres 2 elements.
+
+\subsection{Treballador}
+
+El treballador és un procés encarregat de dur a terme una (o més) tasques, anomenades \emph{funcions}. Les funcions reben una cadena de bytes d'entrada, i el seu retorn es una altra cadena de bytes. A més a més, tenen la posibilitat d'anar enviant els resultats a mesura que els van obtenint, enlloc d'haver de fer esperar al client a que estigui tot calculat per tal d'enviar la resposta.
+
+Al sistema definit, el treballador és el codi en Java que s'encarrega de realitzar les recomanacions. Com a entrada, rep únicament un nombre, que es l'identificador de l'usuari, i com a sortida retorna una cadena, codificada en JSON\footnote{JavaScript Object Notation} de les recomanacions sol·licitades.
+
+\subsection{Client}
+
+El client és l'element que crida a funcions del treballador. El client pot cridar les funcions de dues formes, o bé esperant a que el treballador de Gearman retorni el resultat, o sinó directament fent la petició i seguint amb el procés. Això permet, o bé, comunicació amb un procés, que seria el primer cas, o l'execució de tasques en segon plà.
+
+A l'aplicació, el client és utilitzat per el codi PHP per a obtenir resultats del recomanador.
