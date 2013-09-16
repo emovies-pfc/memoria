@@ -1,32 +1,32 @@
 \chapter{Estat de l'art}
 
-\section{Algoritmes de recomanació}
+\section{Algorismes de recomanació}
 
-Els algoritmes de recomanació són algoritmes, que, com el seu nom indica, són utilitzats per a recomanar algúna cosa a algún individu. Aquesta definició, per simple que pugui semblar, introdueix dos elements molt importants. Introdueix el concepte de l'element a ser recomanat, d'ara en endavant el \emph{producte}, i el concepte de qui rep la recomanació, d'ara en endevant, l'\emph{usuari}.Desde aquest punt, apareixeràn aleshores tres mètodes per a atacar el problema d'aconseguir una recomanació de qualitat:
+Els algorismes de recomanació són algorismes, que, com el seu nom indica, són emprats per a recomanar algúna cosa a algún individu. Aquesta definició, per simple que pugui semblar, introdueix dos elements molt importants. Introdueix el concepte de l'element a ser recomanat, d'ara en endavant el \emph{producte}, i el concepte de qui rep la recomanació, d'ara en endevant, l'\emph{usuari}. Des d'aquest punt, apareixeràn aleshores tres mètodes per atacar el problema d'aconseguir una recomanació de qualitat:
 
 \begin{itemize}
 	\item Recomanadors col·laboratius \\
-		Aquests recomanadors es basen en tenir un conjunt d'\emph{usuaris} que valorin els \emph{productes}, i amb aquesta informació determinen usuaris similars entre ells. Aleshores, a l\emph{usuari} li recomanarà \emph{productes} que hagin agradat als \emph{usuaris} semblants amb ell. El principal problema que tenen aquests recomanadors és que pateixen molt a l'inici del projecte, ja que cal tenir informació de molts \emph{usuaris} i molts \emph{productes} per tal de proveïr recomanacions encertades.
+		Aquests recomanadors es basen en tenir un conjunt d'\emph{usuaris} que valorin els \emph{productes} i, amb aquesta informació, determinen usuaris similars entre ells. Aleshores recomenarà a l'\emph{usuari} aquells \emph{productes} que hagin agradat als \emph{usuaris semblants} amb ell. El principal problema que tenen aquests recomanadors és que pateixen molt a l'inici del projecte, ja que cal tenir informació de molts \emph{usuaris} i molts \emph{productes} per tal de proveïr recomanacions encertades.
 	\item Recomanadors basats en contingut \\
-		Aquests altre sistema el que fà és categoritzar els \emph{productes}. Aleshores, quan l'usuari indica quins \emph{productes} li agraden, sap quines son les característiques més importants per a aquest \emph{usuari}.
+		Aquest altre sistema el que fa és categoritzar els \emph{productes}. Aleshores, quan l'usuari indica quins \emph{productes} li agraden, sap quines son les característiques més importants per a aquest \emph{usuari}.
 	\item Recomanadors híbrids \\
-		Aquest sistema consisteix en intentar unir els recomanadors col·laboratis amb els recomanadors basats en contingut. És el sistema més complex, donada la gran quantitat de variables que hi participen, però a l'hora també és el sistema que pot arribar a donar millors resultats, si es ben implementat i paratemeritzat.
+		Aquest sistema consisteix en intentar unir els recomanadors col·laboratius amb els recomanadors basats en contingut. És el sistema més complex, donada la gran quantitat de variables que hi participen, però alhora també és el sistema que pot arribar a donar millors resultats, si es ben implementat i parametritzat.
 \end{itemize}
 
 \subsection{Recomanació de pel·lícules}
 
-Existeixen moltes webs que es dediquen a la recomanació de pèl·licules. Per a acotar l'anàlisi de les tècniques que es fan servir, reduirem el conjunt a 10.\cite{top-ten-film-recommenders}
+Existeixen moltes webs que es dediquen a la recomanació de pel·lícules. Per a acotar l'anàlisi de les tècniques que es fan servir reduirem el conjunt a 10.\cite{top-ten-film-recommenders}
 
-Com haviem comentat a la secció anterior, es pot distingir fàcilment entre els \emph{recomanadors col·laboratius} i els \emph{recomanadors basats en contingut}. Exemples del primer conjunt podrien ser, per exemple, Netflix, Movielens, Flixter i Criticker. Per altra banda, formarien part del segon conjunt webs tals com Rotten Tomatoes i Jinni. Finalment, hi ha un tercer conjunt, que són els que es basen en rebre com a input una pèl·licula i retornar-te'n d'altres. Aquestes webs, com serien IMDb, Clerkdogs o Nanocrowd, molt probablement, es basen en un \emph{recomanador basat en contingut}. Aleshores, extreuen les característiques de la pèl·licula mencionada, i en busquen d'altres que tinguin parametres similars.
+Com havíem comentat a la secció anterior, es pot distingir fàcilment entre els \emph{recomanadors col·laboratius} i els \emph{recomanadors basats en contingut}. Exemples del primer conjunt podrien ser, per exemple, Netflix, Movielens, Flixter i Criticker. Per altra banda, formarien part del segon conjunt webs tals com Rotten Tomatoes i Jinni. Finalment, hi ha un tercer conjunt que són els que es basen en rebre com a input una pel·lícula i retornar-ne d'altres. Aquestes webs, com serien IMDb, Clerkdogs o Nanocrowd, molt probablement es basen en un \emph{recomanador basat en contingut} el qual extreu les característiques de la pel·lícula mencionada i en busquen d'altres que tinguin paràmetres similars.
 
 \section{Importància de la recomanació a la web}
 
-La recomanació a la web, que fins fa un temps no era massa comú, cada cop està guanyant mes importància, tot i que no en siguem conscients. Un dels grans exemples de recomanació a internet és la publicitat. Un altre gran exemple de recomanacions el trobem als e-commerce, on fins i tot ja hi ha tercers que es dediquen a implementar els sistemes de recomanació, evitant així al propietari de la tenda online a haver de fer-ho ell \cite{brainsins}.
+La recomanació a la web, que fins fa un temps no era massa comuna, cada cop està guanyant més importància tot i que no en siguem conscients. Un dels grans exemples de recomanació a internet és la publicitat. Un altre gran exemple de recomanacions el trobem als e-commerce, on fins i tot ja hi ha empreses de tercers que es dediquen a implementar els sistemes de recomanació, evitant així al desenvolupador del comerç on-line aquesta feina \cite{brainsins}.
 
-Un exemple que es interesant de remarcar es l'exemple de \emph{Netflix}. Aquesta empresa va veure clar que els sistemes de recomanació eren important, fins al punt que va organitzar un concurs, on, els desenvolupadors del millor algorisme de recomanació, s'emportarien un premi de un milió de dòlars \cite{netflix-prize}.
+Un exemple que és interessant de remarcar és \emph{Netflix}. Aquesta empresa va veure clar que els sistemes de recomanació eren importants, fins al punt que va organitzar un concurs on, els desenvolupadors que aconseguissin trobar el millor algorisme de recomanació, s'emportarien un premi d'un milió de dòlars \cite{netflix-prize}.
 
 \section{Conjunt de proves}
 
-Per a poder provar els diferents recomanadors que s'utilitzaran, cal un conjunt de proves. Ja que, encara que es publiques la web, aconseguir un conjunt de proves suficientment gran és un procés lent, s'ha utilitzat un conjunt de proves bastant comú en el camp de la recomanació, que és el de Movielens \cite{movielens-dataset}.
+Per a poder provar els diferents recomanadors que s'utilitzaran cal un conjunt de proves. Donat que, encara que es publiquès la web, aconseguir un conjunt de proves suficientment gran és un procès lent, s'ha utilitzat un conjunt de proves bastant comú en el camp de la recomanació, el de Movielens \cite{movielens-dataset}.
 
-Movielens ha posat a disposició pública 3 conjunts de dades diferents, un de cent mil puntuacions, un de un milió de puntuacions, i un de deu milions. El de deu milions té la limitació de que no han donat informació sobre els usuaris, mentres que els altres dos conjunts si que en contenen.
+Movielens ha posat a disposició pública tres conjunts de dades diferents, un de cent mil puntuacions, un de un milió de puntuacions, i un de deu milions. El de deu milions té la limitació de que no han donat informació sobre els usuaris mentres que els altres dos conjunts si que en contenen.
