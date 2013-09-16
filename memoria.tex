@@ -2,15 +2,18 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[catalan]{babel}
-\usepackage[backend=biber]{biblatex}
-\bibliography{bibliografia/memoria.bib}
+\usepackage{biblatex} % [backend=biber]
+\bibliography{bibliografia/memoria}
 \usepackage{graphicx}
-\usepackage{epstopdf}
 \usepackage{setspace}
 \usepackage{times}
 \usepackage{hyperref}
 \usepackage{algorithm}
- \usepackage{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage{caption}
+
+\DeclareCaptionType{mycapequ}[][Llistat d'equacions]
+\captionsetup[mycapequ]{labelformat=empty}
 
 %\usepackage{geometry}
 %\geometry{verbose,a4paper,tmargin=25mm,bmargin=25mm,lmargin=3cm,rmargin=2cm}
@@ -27,12 +30,10 @@
 \pagestyle{plain}
 \thispagestyle{empty}
 
-
 \vspace{0.39cm}
-\begin{center}
-\includegraphics[width=4cm]{figs/uab}\\
-\includegraphics[width=8cm]{figs/etse}
-\end{center}
+\begin{flushright}
+\includegraphics[width=\textwidth]{figs/logos.png}
+\end{flushright}
 \vspace{0.39cm}
 
 \vfill{}
@@ -40,47 +41,32 @@
 {\par\centering \textsc{\Large Plataforma eMovie: Xarxa social de pel·lícules}\par}
 \vfill{}
 
-\begin{center}
+\begin{flushright}
+\begin{minipage}[b]{0.5\textwidth}
 
-\begin{minipage}[t]{0.65\columnwidth}
-Memòria del projecte de final de carrera corresponent als estudis 
-d'Enginyeria Superior en Informàtica presentat per Roger Llopart Pla
-i dirigit per Jordi Gonzàlez i Sabaté.
+Memòria del projecte d'Enginyeria en Informàtica realitzat per Roger Llopart Pla i dirigit per Jordi Gonzàlez i Sabaté.\\
 
+Bellaterra, 16 de setembre de 2013
 \end{minipage}
-\medskip
-
-
-\end{center}
-
+\end{flushright}
 \vfill{}
-{\par\centering Bellaterra, XXXXX de 2013 \par}
 
-
-\newpage \vspace*{6 true cm} \begin{center} \begin{minipage}{4in}
+\cleardoublepage
+\vspace*{6 true cm} \begin{center} \begin{minipage}{4in}
 \parindent=0pt El firmant, Jordi Gonzàlez i Sabaté, professor del Departament d'Enginyeria de la Informació i de les Comunicacions de la Universitat Autònoma de Barcelona \\
 
 CERTIFICA:\\
 
-Que la present memòria ha sigut realitzada sota la seva direcció per
-Roger Llopart Pla \par \vspace*{.5in} Bellaterra, XXXXX de 2013
+Que la present memòria ha estat realitzada sota la seva direcció per
+Roger Llopart Pla \par \vspace*{.5in} Bellaterra, 16 de setembre de 2013
 \vspace*{.5in}
 \begin{center} \vrule width 3in height 0.4pt\\Firmat: Jordi Gonzàlez i Sabaté
 \end{center} \end{minipage} \end{center}
 
-\newpage 
-\vspace*{1 cm} \vspace*{2in} 
-\begin{flushright} 
-\begin{minipage}{4in} 
-\begin{flushright} {\em Dedicatòria.} 
-\end{flushright} 
-\end{minipage} 
-\end{flushright} \rm
-
 
 \chapter*{Agraïments}
 
-Agraïments ...
+Voldria agraïr a tothom que m'ha ajudat amb aquest projecte. Especial menció al meu tutor del projecte, Jordi Gonzàlez i Sabaté, per tota l'ajuda que m'ha brindat. També mencionar a les comunitats de Mahout i Movielens, el treball de les quals ha estat inestimable per a la realització d'aquest projecte.
 
 \tableofcontents
 
@@ -90,7 +76,6 @@ Agraïments ...
 
 % Capítols.
 
-% \include{caps/objectiu}
 \include{caps/introduccio}
 \include{caps/estat_del_art}
 \include{caps/implementacio-web}
@@ -101,8 +86,7 @@ Agraïments ...
 \phantomsection
 \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography
-
-\newpage 
+\cleardoublepage
 
 \pagestyle{plain} 
 \vspace*{6cm} 
@@ -112,7 +96,7 @@ Agraïments ...
 \begin{center} 
 \vrule width 3in height 0.4pt
 \\Firmat:\ Roger Llopart Pla
-\\ Bellaterra, XXXXXX de 2013
+\\ Bellaterra, 16 de setembre de 2013
 \end{center} 
 \end{minipage} 
 \end{center} 
