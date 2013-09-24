@@ -3,6 +3,10 @@
 *.lof
 *.toc
 *.bcf
+*.nav
+*.snm
+*.vrb
+presentacio.pdf
 memoria.pdf
 previ.pdf
 *.synctex.gz
